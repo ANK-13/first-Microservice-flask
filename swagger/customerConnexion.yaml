@@ -1,0 +1,28 @@
+swagger: "2.0"
+
+info:
+  title: "Customer API"
+  version: "1.0"
+
+basePath: /
+
+paths:
+  /customers/:
+    get:
+      operationId: api.customer.Customer.get
+      responses:
+        '200':
+          description: 'Fetch a list of customers'
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Customer'          
+
+definitions:
+  Customer:
+    type: object
+    properties:
+      id: { type: string }
+      name: { type: string }
+      Org: { type: string }
+      date: {type: string}
